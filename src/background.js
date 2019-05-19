@@ -20,7 +20,7 @@ function createWindow () {
   var mainScreen = screenElectron.getPrimaryDisplay();
   const {width, height} = mainScreen.bounds
   // Create the browser window.
-  win = new BrowserWindow({ width: width/3, height, x:0, y:0, 
+  win = new BrowserWindow({ width: width*0.33, height, x:0, y:0, 
   webPreferences: {
     nodeIntegration: true,
      devTools: false
