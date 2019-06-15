@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, globalShortcut } from 'electron'
 import {
   createProtocol,
   installVueDevtools
@@ -18,9 +18,13 @@ function createWindow () {
   const electron = require('electron');
   var screenElectron = electron.screen;
   var mainScreen = screenElectron.getPrimaryDisplay();
+
   const {width, height} = mainScreen.bounds
   // Create the browser window.
-  win = new BrowserWindow({ width: width*0.33, height, x:0, y:0, 
+  win = new BrowserWindow({ 
+  title: 'Strona testowa',
+  icon: 'src/assets/sync.ico',
+  width: width*0.33, height, x:0, y:0, 
   webPreferences: {
     nodeIntegration: true,
      devTools: false
@@ -40,6 +44,11 @@ function createWindow () {
   win.on('closed', () => {
     win = null
   })
+
+  globalShortcut.register('CommandOrControl+K', () => {
+    win.isMaximized() ? win.minimize() : win.maximize()
+  })
+
 }
 
 // Quit when all windows are closed.
