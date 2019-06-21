@@ -4,7 +4,8 @@
     dark
   >
     
-      
+
+   
     <v-toolbar
       color="red"
       dense
@@ -12,6 +13,7 @@
       clipped-left
       app
     >
+
 
       <v-toolbar-title class="mr-5 align-center">
 
@@ -22,7 +24,7 @@
       </v-toolbar-title>
 
       <div>
-          <v-btn><router-link to="/Layout" tag="button">Change view 1</router-link></v-btn>
+          <v-btn><router-link to="/Home1" tag="button">Change view 2</router-link></v-btn>
         
       </div>
 
@@ -39,13 +41,10 @@
       </v-layout>
     </v-toolbar>
     <v-content>
-      
 
+       <Layout/>
 
-        <router-view></router-view>
-
-
-
+        
 
     </v-content>
   </v-app>
@@ -53,19 +52,17 @@
 
 <script>
 
-  import Layout from './../components/Layout'
+    import Layout from './../components/Layout'
 
-  export default {
+    export default {
     data: () => ({
-
     }),
     props: {
       source: String
-    }
-    
+    },
+        components: {
+            Layout
+        }
         
 }
 </script>
-
-
-
