@@ -23,7 +23,6 @@ export default new Router({
       path: '/Layout',
       name: 'Layout',
       component: () => import('./components/Home1'),
-    }
-    
+    }   
   ]
 })

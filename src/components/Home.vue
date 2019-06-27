@@ -39,12 +39,15 @@
       </v-layout>
     </v-toolbar>
     <v-content>
+
+
+        
+
+
+
+       <router-view></router-view>
+
       
-
-
-        <router-view></router-view>
-
-
 
 
     </v-content>
@@ -57,7 +60,7 @@
 
   export default {
     data: () => ({
-
+        
     }),
     props: {
       source: String
@@ -66,6 +69,7 @@
         
 }
 </script>
+
 
 
 
